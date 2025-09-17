@@ -1,0 +1,10 @@
+# ACTION METADATA
+# https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions
+
+---
+name: gpr-url
+author: '@flex-development'
+description: Get a GitHub Package Registry (GPR) URL
+branding:
+  color: blue
+  icon: link
