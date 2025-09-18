@@ -37,8 +37,10 @@ jobs:
           persist-credentials: false
           ref: ${{ github.head_ref || github.ref }}
       - id: test1
+        name: Test defaults
         uses: ./
       - id: test2
+        name: Test inputs
         uses: ./
         with:
           pkg: grease
