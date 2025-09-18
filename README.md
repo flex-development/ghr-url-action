@@ -27,7 +27,62 @@ This is a simple action for creating a GitHub Package Registry (GPR) URL.
 
 ## Use
 
-**TODO**: use
+```yaml
+---
+name: publish
+on:
+  release:
+    types:
+      - published
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.environment.outputs.url }}
+    steps:
+      - id: environment
+        name: Get environment url
+        uses: flex-development/gpr-url-action@1.0.0
+  gpr:
+    needs: preflight
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+    runs-on: ubuntu-latest
+    environment:
+      name: gpr
+      url: ${{ needs.preflight.outputs.environment }}
+    steps:
+      - id: checkout
+        name: Checkout ${{ github.ref_name }}
+        uses: actions/checkout@v5.0.0
+        with:
+          persist-credentials: false
+          ref: ${{ github.ref }}
+      - id: npmrc
+        name: Setup .npmrc file
+        uses: actions/setup-node@v5.0.0
+        with:
+          always-auth: true
+          node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: ${{ github.repository_owner }}
+      - id: version
+        name: Get package version
+        uses: flex-development/manver-action@1.0.1
+      - id: dist-tag
+        name: Get dist tag
+        uses: flex-development/dist-tag-action@1.1.2
+        with:
+          target: ${{ steps.version.outputs.manifest }}
+      - id: publish
+        name: Publish package
+        env:
+          ARTIFACT: ${{ github.event.release.assets[0].browser_download_url }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm publish --provenance ${{ steps.dist-tag.outputs.flag }} $ARTIFACT
+```
 
 ## Inputs
 
