@@ -5,6 +5,30 @@
 name: gpr-url
 author: '@flex-development'
 description: Get a GitHub Package Registry (GPR) URL
+inputs:
+  pkg:
+    default: ${{ github.event.repository.name }}
+    description: package name
+    required: false
+  repo:
+    default: ${{ github.repository }}
+    description: github repository name (including owner)
+    required: false
+  server:
+    default: ${{ github.server_url }}
+    description: github server url
+    required: false
+outputs:
+  url:
+    description: the package url
+    value: ${{ steps.url.outputs.result }}
+runs:
+  using: composite
+  steps:
+    - id: url
+      shell: bash
+      run: |
+        echo "result=$(echo "${{ inputs.server }}/${{ inputs.repo }}/pkgs/npm/${{ inputs.pkg }}" | xargs)" >>$GITHUB_OUTPUT
 branding:
   color: blue
   icon: link

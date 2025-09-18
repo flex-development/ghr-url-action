@@ -36,3 +36,16 @@ jobs:
         with:
           persist-credentials: false
           ref: ${{ github.head_ref || github.ref }}
+      - id: test1
+        uses: ./
+      - id: test2
+        uses: ./
+        with:
+          pkg: grease
+          repo: ${{ format('{0}/{1}', github.repository_owner, 'grease') }}
+          server: ${{ format('https://github.{0}.com', github.repository_owner) }}
+      - id: outputs
+        name: Outputs
+        run: |
+          echo steps.test1.outputs.url: ${{ steps.test1.outputs.url }}
+          echo steps.test2.outputs.url: ${{ steps.test2.outputs.url }}
