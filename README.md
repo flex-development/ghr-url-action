@@ -1,9 +1,9 @@
-# gpr-url
+# ghr-url
 
-[![github release](https://img.shields.io/github/v/release/flex-development/gpr-url-action.svg?include_prereleases\&sort=semver)](https://github.com/flex-development/gpr-url-action/releases/latest)
-[![test](https://github.com/flex-development/gpr-url-action/actions/workflows/test.yml/badge.svg)](https://github.com/flex-development/gpr-url-action/actions/workflows/test.yml)
+[![github release](https://img.shields.io/github/v/release/flex-development/ghr-url-action.svg?include_prereleases\&sort=semver)](https://github.com/flex-development/ghr-url-action/releases/latest)
+[![test](https://github.com/flex-development/ghr-url-action/actions/workflows/test.yml/badge.svg)](https://github.com/flex-development/ghr-url-action/actions/workflows/test.yml)
 [![module type: esm](https://img.shields.io/badge/module%20type-esm-brightgreen)](https://github.com/voxpelli/badges-cjs-esm)
-[![license](https://img.shields.io/github/license/flex-development/gpr-url-action.svg)](LICENSE.md)
+[![license](https://img.shields.io/github/license/flex-development/ghr-url-action.svg)](LICENSE.md)
 [![conventional commits](https://img.shields.io/badge/-conventional%20commits-fe5196?logo=conventional-commits\&logoColor=ffffff)](https://conventionalcommits.org)
 [![yarn](https://img.shields.io/badge/-yarn-2c8ebb?style=flat\&logo=yarn\&logoColor=ffffff)](https://yarnpkg.com)
 
@@ -43,7 +43,7 @@ jobs:
     steps:
       - id: environment
         name: Get environment url
-        uses: flex-development/gpr-url-action@1.0.0
+        uses: flex-development/ghr-url-action@1.0.0
   gpr:
     needs: preflight
     permissions:
@@ -115,7 +115,7 @@ The URL of the GitHub server.
 
 ### `url`
 
-The package URL.
+The public registry URL.
 
 ## Contribute
 

@@ -2,10 +2,10 @@
   "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
   "allowCompoundWords": true,
   "caseSensitive": false,
-  "dictionaries": ["@flex-development/gpr-url-action"],
+  "dictionaries": ["@flex-development/ghr-url-action"],
   "dictionaryDefinitions": [
     {
-      "name": "@flex-development/gpr-url-action",
+      "name": "@flex-development/ghr-url-action",
       "path": "./.dictionary.txt"
     }
   ],

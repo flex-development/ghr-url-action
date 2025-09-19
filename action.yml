@@ -2,7 +2,7 @@
 # https://docs.github.com/actions/creating-actions/metadata-syntax-for-github-actions
 
 ---
-name: gpr-url
+name: ghr-url
 author: '@flex-development'
 description: Create a URL for the GitHub Package Registry (GPR) or GitHub Container Registry (GHCR)
 inputs:
@@ -24,7 +24,7 @@ inputs:
     required: false
 outputs:
   url:
-    description: the package url
+    description: the public registry url
     value: ${{ steps.url.outputs.result }}
 runs:
   using: composite

@@ -1,5 +1,5 @@
 {
-  "name": "@flex-development/gpr-url-action",
+  "name": "@flex-development/ghr-url-action",
   "description": "Create a URL for a GitHub registry",
   "version": "1.0.0",
   "keywords": [
@@ -14,9 +14,9 @@
     "url"
   ],
   "license": "BSD-3-Clause",
-  "homepage": "https://github.com/flex-development/gpr-url-action",
-  "repository": "https://github.com/flex-development/gpr-url-action.git",
-  "bugs": "https://github.com/flex-development/gpr-url-action/issues",
+  "homepage": "https://github.com/flex-development/ghr-url-action",
+  "repository": "https://github.com/flex-development/ghr-url-action.git",
+  "bugs": "https://github.com/flex-development/ghr-url-action/issues",
   "author": {
     "name": "Lexus Drumgold",
     "url": "https://github.com/unicornware"
