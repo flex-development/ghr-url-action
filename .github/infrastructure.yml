@@ -148,7 +148,7 @@ repository:
   automated_security_fixes: true
   default_branch: main
   delete_branch_on_merge: true
-  description: GitHub Package Registry URL utility for GitHub Actions
+  description: Create a URL for a GitHub registry
   has_issues: true
   has_projects: true
   has_wiki: false
@@ -159,7 +159,12 @@ repository:
   squash_merge_commit_title: PR_TITLE
   topics:
     - actions
+    - container
+    - deploy
+    - deployment
+    - environment
     - github
+    - ghcr
     - gpr
     - url
   visibility: public

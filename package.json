@@ -1,9 +1,14 @@
 {
   "name": "@flex-development/gpr-url-action",
-  "description": "GitHub Package Registry URL utility for GitHub Actions",
+  "description": "Create a URL for a GitHub registry",
   "version": "1.0.0",
   "keywords": [
     "actions",
+    "container",
+    "deploy",
+    "deployment",
+    "environment",
+    "ghcr",
     "github",
     "gpr",
     "url"

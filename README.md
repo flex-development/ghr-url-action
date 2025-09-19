@@ -7,13 +7,14 @@
 [![conventional commits](https://img.shields.io/badge/-conventional%20commits-fe5196?logo=conventional-commits\&logoColor=ffffff)](https://conventionalcommits.org)
 [![yarn](https://img.shields.io/badge/-yarn-2c8ebb?style=flat\&logo=yarn\&logoColor=ffffff)](https://yarnpkg.com)
 
-Get a GitHub Package Registry URL
+Create a URL for a GitHub registry
 
 ## Contents
 
 - [What is this?](#what-is-this)
 - [Use](#use)
 - [Inputs](#inputs)
+  - [`container`](#container)
   - [`pkg`](#pkg)
   - [`repo`](#repo)
   - [`server`](#server)
@@ -23,7 +24,7 @@ Get a GitHub Package Registry URL
 
 ## What is this?
 
-This is a simple action for creating a GitHub Package Registry (GPR) URL.
+This is a simple action for creating GitHub package and container registry URLs.
 
 ## Use
 
@@ -85,6 +86,12 @@ jobs:
 ```
 
 ## Inputs
+
+### `container`
+
+> **default**: `false`
+
+Whether to generate a URL for the GitHub Container Registry (GHCR).
 
 ### `pkg`
 

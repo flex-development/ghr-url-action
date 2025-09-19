@@ -40,14 +40,22 @@ jobs:
         name: Test defaults
         uses: ./
       - id: test2
-        name: Test inputs
+        name: Test inputs (container registry)
+        uses: ./
+        with:
+          container: true
+          pkg: oauth
+          repo: ${{ format('{0}/{1}', github.repository_owner, 'oauth') }}
+      - id: test3
+        name: Test inputs (package registry)
         uses: ./
         with:
           pkg: grease
           repo: ${{ format('{0}/{1}', github.repository_owner, 'grease') }}
-          server: ${{ format('https://github.{0}.com', github.repository_owner) }}
+          server: https://github.fldve.com
       - id: outputs
         name: Outputs
         run: |
           echo steps.test1.outputs.url: ${{ steps.test1.outputs.url }}
           echo steps.test2.outputs.url: ${{ steps.test2.outputs.url }}
+          echo steps.test3.outputs.url: ${{ steps.test3.outputs.url }}

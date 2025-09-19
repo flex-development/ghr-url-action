@@ -4,8 +4,12 @@
 ---
 name: gpr-url
 author: '@flex-development'
-description: Get a GitHub Package Registry (GPR) URL
+description: Create a URL for the GitHub Package Registry (GPR) or GitHub Container Registry (GHCR)
 inputs:
+  container:
+    default: false
+    description: generate url for container registry
+    required: false
   pkg:
     default: ${{ github.event.repository.name }}
     description: package name
@@ -28,7 +32,19 @@ runs:
     - id: url
       shell: bash
       run: |
-        echo "result=$(echo "${{ inputs.server }}/${{ inputs.repo }}/pkgs/npm/${{ inputs.pkg }}" | xargs)" >>$GITHUB_OUTPUT
+        set -e
+
+        # init url type.
+        TYPE=
+
+        # generate url for container or package registry.
+        [[ ${{ inputs.container }} == true ]] && TYPE=container || TYPE=npm
+
+        # create registry url.
+        URL=${{ inputs.server }}/${{ inputs.repo }}/pkgs/$TYPE/${{ inputs.pkg }}
+
+        # set action output.
+        echo "result=$(echo "$URL" | xargs)" >>$GITHUB_OUTPUT
 branding:
   color: blue
   icon: link
