@@ -204,6 +204,7 @@ jobs:
         name: Checkout ${{ env.REF_NAME }}
         uses: actions/checkout@v5.0.0
         with:
+          fetch-depth: 0
           persist-credentials: false
           ref: ${{ env.REF }}
       - id: spelling
