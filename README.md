@@ -20,6 +20,7 @@ Create a URL for a GitHub registry
   - [`server`](#server)
 - [Outputs](#outputs)
   - [`url`](#url)
+- [Related](#related)
 - [Contribute](#contribute)
 
 ## What is this?
@@ -117,9 +118,15 @@ The URL of the GitHub server.
 
 The public registry URL.
 
+## Related
+
+- [`flex-development/npm-url-action`][npm-url-action] — create a url for the npm registry
+
 ## Contribute
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 This project has a [code of conduct](./CODE_OF_CONDUCT.md). By interacting with this repository, organization, or
 community you agree to abide by its terms.
+
+[npm-url-action]: https://github.com/flex-development/npm-url-action
