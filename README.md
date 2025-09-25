@@ -92,25 +92,25 @@ jobs:
 
 > **default**: `false`
 
-Whether to generate a URL for the GitHub Container Registry (GHCR).
+Whether to generate a URL for the GitHub Container Registry (GHCR) (optional).
 
 ### `pkg`
 
 > **default**: `${{ github.event.repository.name }}`
 
-The name of the package.
+The name of the package (optional).
 
 ### `repo`
 
 > **default**: `${{ github.repository }}`
 
-The name of the repository, including the owner.
+The name of the repository, including the owner (optional).
 
 ### `server`
 
 > **default**: `${{ github.server_url }}`
 
-The URL of the GitHub server.
+The URL of the GitHub server (optional).
 
 ## Outputs
 
