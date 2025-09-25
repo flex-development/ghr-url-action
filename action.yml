@@ -4,7 +4,7 @@
 ---
 name: ghr-url
 author: '@flex-development'
-description: Create a URL for the GitHub Package Registry (GPR) or GitHub Container Registry (GHCR)
+description: Create a URL for a GitHub registry
 inputs:
   container:
     default: false
